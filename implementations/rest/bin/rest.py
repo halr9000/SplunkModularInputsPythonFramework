@@ -19,13 +19,6 @@ STANZA = None
 SESSION_TOKEN = None
 REGEX_PATTERN = None
 
-#dynamically load in any eggs in /etc/apps/snmp_ta/bin
-EGG_DIR = SPLUNK_HOME + "/etc/apps/rest_ta/bin/"
-
-for filename in os.listdir(EGG_DIR):
-    if filename.endswith(".egg"):
-        sys.path.append(EGG_DIR + filename) 
-       
 import requests,json
 from requests.auth import HTTPBasicAuth
 from requests.auth import HTTPDigestAuth
